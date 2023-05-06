@@ -120,30 +120,29 @@ print(word_counts)
 print('Here is the sorted list')
 print(counts_list_sorted)
 
-# Slice the sorted list to just the first 25 tuples
+
+# Now we want to plot a horizontal bargraph to show frequency of word occurence.
+# First we slice the sorted list to just the first 25 tuples
 top_25 = counts_list_sorted[0:25]
 print('Here are the top 25 words and how frequently they occur')
 print(top_25)
-
 # Make a list of dummy numbers to populate the axis with the words
 ticks = None
-
 # Get just the words from top_25 and assign to labels
 labels = []
 for i in top_25:
     labels.append(i[0])
-
 # Get just the frequencies from top_25 and assign to frequencies
 frequencies = []
 for i in top_25:
     frequencies.append(i[1])
-
 print("Tick values:", ticks)
 print()
 print("Labels:", labels)
 print()
 print("Frequencies:", frequencies)
 
+# Then using this data we plot the horizontal bargraph
 fig, ax = plt.subplots(figsize=(15, 15))
 plt.barh(labels, frequencies)
 plt.xlabel('Frequency of occurrence')
